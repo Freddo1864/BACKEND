@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: achat_voiture
 -- ------------------------------------------------------
@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,7 +21,7 @@
 
 DROP TABLE IF EXISTS `caracteristiques`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `caracteristiques` (
   `id_caracteristique` int(11) NOT NULL,
   `transmission` varchar(50) DEFAULT NULL,
@@ -49,7 +49,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `donnees_de_base`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `donnees_de_base` (
   `id_donnee` int(11) NOT NULL,
   `carrosserie` varchar(50) DEFAULT NULL,
@@ -80,7 +80,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `historique_vehicule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `historique_vehicule` (
   `id_historique` int(11) NOT NULL,
   `kilometrage` int(11) DEFAULT NULL,
@@ -104,12 +104,36 @@ INSERT INTO `historique_vehicule` VALUES (1,231333,'2000',2000,3,'oui','non'),(2
 UNLOCK TABLES;
 
 --
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `images` (
+  `id_image` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_image` varchar(100) DEFAULT NULL,
+  `url_image` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_image`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `infos_supplementaires`
 --
 
 DROP TABLE IF EXISTS `infos_supplementaires`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `infos_supplementaires` (
   `id_info` int(11) NOT NULL,
   `couleur_exterieure` varchar(50) DEFAULT NULL,
@@ -136,7 +160,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `modeles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `modeles` (
   `id_modele` int(11) NOT NULL,
   `nom` varchar(50) DEFAULT NULL,
@@ -150,7 +174,7 @@ CREATE TABLE `modeles` (
 
 LOCK TABLES `modeles` WRITE;
 /*!40000 ALTER TABLE `modeles` DISABLE KEYS */;
-INSERT INTO `modeles` VALUES (1,'golf'),(2,'a3'),(3,'passat'),(4,'toledo'),(5,'passat'),(6,'lupo'),(7,'leon'),(8,'golf'),(9,'polo'),(10,'a1');
+INSERT INTO `modeles` VALUES (1,'golf'),(2,'a3'),(3,'passat'),(4,'toledo'),(5,'passat'),(6,'lupo'),(7,'leon'),(8,'golf'),(9,'polo'),(10,'a1'),(11,'ibiza'),(12,'ateca'),(13,'Q3'),(14,'TT');
 /*!40000 ALTER TABLE `modeles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,7 +184,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `prix`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `prix` (
   `id_prix` int(11) NOT NULL,
   `prix` int(11) DEFAULT NULL,
@@ -184,7 +208,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `types` (
   `id_type` int(11) NOT NULL,
   `definition` varchar(50) DEFAULT NULL,
@@ -208,7 +232,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vendeurs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vendeurs` (
   `id_vendeur` int(11) NOT NULL,
   `nom_vendeur` varchar(50) DEFAULT NULL,
@@ -238,7 +262,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `voitures`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `voitures` (
   `id_voiture` int(11) NOT NULL,
   `nom_voiture` varchar(50) DEFAULT NULL,
@@ -250,6 +274,7 @@ CREATE TABLE `voitures` (
   `id_prix` int(11) NOT NULL,
   `id_type` int(11) NOT NULL,
   `id_modele` int(11) NOT NULL,
+  `id_image` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_voiture`),
   KEY `id_vendeur` (`id_vendeur`),
   KEY `id_donnee` (`id_donnee`),
@@ -259,6 +284,7 @@ CREATE TABLE `voitures` (
   KEY `id_prix` (`id_prix`),
   KEY `id_type` (`id_type`),
   KEY `id_modele` (`id_modele`),
+  KEY `id_image` (`id_image`),
   CONSTRAINT `voitures_ibfk_1` FOREIGN KEY (`id_vendeur`) REFERENCES `vendeurs` (`id_vendeur`),
   CONSTRAINT `voitures_ibfk_2` FOREIGN KEY (`id_donnee`) REFERENCES `donnees_de_base` (`id_donnee`),
   CONSTRAINT `voitures_ibfk_3` FOREIGN KEY (`id_historique`) REFERENCES `historique_vehicule` (`id_historique`),
@@ -266,7 +292,8 @@ CREATE TABLE `voitures` (
   CONSTRAINT `voitures_ibfk_5` FOREIGN KEY (`id_info`) REFERENCES `infos_supplementaires` (`id_info`),
   CONSTRAINT `voitures_ibfk_6` FOREIGN KEY (`id_prix`) REFERENCES `prix` (`id_prix`),
   CONSTRAINT `voitures_ibfk_7` FOREIGN KEY (`id_type`) REFERENCES `types` (`id_type`),
-  CONSTRAINT `voitures_ibfk_8` FOREIGN KEY (`id_modele`) REFERENCES `modeles` (`id_modele`)
+  CONSTRAINT `voitures_ibfk_8` FOREIGN KEY (`id_modele`) REFERENCES `modeles` (`id_modele`),
+  CONSTRAINT `voitures_ibfk_9` FOREIGN KEY (`id_image`) REFERENCES `images` (`id_image`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -276,7 +303,7 @@ CREATE TABLE `voitures` (
 
 LOCK TABLES `voitures` WRITE;
 /*!40000 ALTER TABLE `voitures` DISABLE KEYS */;
-INSERT INTO `voitures` VALUES (1,'volkswagen',1,5,4,4,2,5,3,1),(2,'audi',5,6,8,6,5,1,8,10),(3,'volkswagen',7,1,10,1,7,8,4,3),(4,'seat',3,2,3,2,3,6,7,4),(5,'audi',10,8,6,9,1,7,10,2),(6,'seat',2,3,9,3,10,3,2,7),(7,'volkswagen',9,7,2,5,4,2,7,9),(8,'audi',6,4,1,7,6,4,1,10),(9,'seat',4,9,5,8,8,10,5,7),(10,'volkswagen',8,10,7,10,9,9,6,6),(11,'audi',10,5,4,5,4,1,5,2),(12,'seat',4,7,3,3,6,6,8,7);
+INSERT INTO `voitures` VALUES (1,'volkswagen',1,5,4,4,2,5,3,1,NULL),(2,'audi',5,6,8,6,5,1,8,10,NULL),(3,'volkswagen',7,1,10,1,7,8,4,3,NULL),(4,'seat',3,2,3,2,3,6,7,4,NULL),(5,'audi',10,8,6,9,1,7,10,2,NULL),(6,'seat',2,3,9,3,10,3,2,7,NULL),(7,'volkswagen',9,7,2,5,4,2,7,9,NULL),(8,'audi',6,4,1,7,6,4,1,13,NULL),(9,'seat',4,9,5,8,8,10,5,11,NULL),(10,'volkswagen',8,10,7,10,9,9,6,6,NULL),(11,'audi',10,5,4,5,4,1,5,14,NULL),(12,'seat',4,7,3,3,6,6,8,12,NULL);
 /*!40000 ALTER TABLE `voitures` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,4 +320,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-07 10:17:24
+-- Dump completed on 2022-10-11 13:53:39
