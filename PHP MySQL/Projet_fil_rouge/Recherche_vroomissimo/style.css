@@ -1,18 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+
 body {
     /* background-image: url(./img/cool-background.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(70deg, rgba(126, 130, 134, 1) 0%, rgba(79, 74, 77, 1) 50%, rgb(29, 28, 28) 100%);
+    /* background: #6b71db url(https://i.pinimg.com/736x/9d/34/c0/9d34c077ad614bb7f87a6998d15138c0.jpg) center center/cover no-repeat local; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
 }
 
-h1, h2{
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 50px;
+h1, h2 {
+    text-align: center;    
+    font-size: 180px;
+    font-family: 'Barlow Condensed', sans-serif;
+    margin: 10px;
+    color: white;
+}
+
+h1 {
+    padding-bottom: 20px;
 }
 
 h2 {
-    font-size: 20px;
-}
+    font-size: 40px;
+    font-family: 'Gemunu Libre', sans-serif;}
 
 form {
     display: flex;
@@ -23,15 +34,17 @@ form {
 }
 
 input {
-    height: 50px;
+    height: 80px;
     width: 300px;
-    font-size: x-large;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 50px;
     text-align: center;
     background-color: rgb(177, 154, 125);
     margin-right: 20px;
+    margin-left: 20px;
     color: white;
     border-radius: 5px;
-    border: 3px solid rgb(116, 76, 76);
+    border: 3px solid white;
 }
 
 .show_car {
@@ -53,17 +66,19 @@ table {
 }
 
 td {
-    border: 1px solid black;
+    border: 1px solid rgb(124, 4, 124);
     text-align: center;
     width: 10%;
+    font-family: 'Gemunu Libre', sans-serif;
+    color: white;
 }
 
 
 #titre {
     font-size: 40px;
-    color: rgb(253, 242, 21);
+    color: whitesmoke;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: rgb(6, 83, 151);
+    background-color: black;
 }
 
 img {
@@ -75,7 +90,7 @@ img {
 }
 
 img:hover {
-    transform: scale(2.4);
+    transform: scale(2.2);
     border: 3px solid white;
     /* transform: translate(-1500px); */
     /* width: 600px; */
@@ -83,12 +98,26 @@ img:hover {
 }
 
 p {
-    font-size: 35px;
+    font-size: 55px;
     font-style: italic;
     font-weight: 900;
     text-transform: uppercase;
+    color: white;
 }
 
 .image {
     padding: 20px;
+}
+
+label {
+    font-size: 50px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+#demotext {
+    color: #ecf1f1;
+    background: #6b71db url(https://i.pinimg.com/736x/9d/34/c0/9d34c077ad614bb7f87a6998d15138c0.jpg) center center/cover no-repeat local;    
+    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5, -2px 3px #808d93, -3px 2px #cdd2d5, -3px 4px #808d93, -4px 3px #cdd2d5, -4px 5px #808d93, -5px 4px #cdd2d5, -5px 6px #808d93, -6px 5px #cdd2d5, -6px 7px #808d93, -7px 6px #cdd2d5, -7px 8px #808d93, -8px 7px #cdd2d5;
+    color: #ecf1f1;
+    padding-bottom: 20px;
 }
