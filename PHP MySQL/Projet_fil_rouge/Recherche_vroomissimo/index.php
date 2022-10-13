@@ -1,4 +1,5 @@
 <?php
+
 // Accès à la base de données avec l'objet PDO.
     $bdd = new PDO('mysql:host=localhost;dbname=achat_voiture;', 'root', '');
 
@@ -22,19 +23,19 @@
         if(!empty($recherche)) {
             $condition[] = 'nom_voiture LIKE "%'.$recherche.'%"';      
         }
-
+// Concaténation de la requête $query avec la condition de recherche par le "nom" de la table "modele".
         if(!empty($modele)) {
             $condition[] = 'nom LIKE "%'.$modele.'%"';
         }
-
+// Concaténation de la requête $query avec la condition de recherche par le "prix" de la table "prix".
         if(!empty($prix)) {
             $condition[] = 'prix LIKE "%'.$prix.'%"';
         }
-
+// Concaténation de la requête $query avec la condition de recherche par la "couleur" de la table "couleur_exterieure".
         if(!empty($couleur)) {
             $condition[] = 'couleur_exterieure LIKE "%'.$couleur.'%"';
         }
-
+// Requête $sql est égale à la requête $query + "WHERE" + condition + ordre de tri decroissant.
     $sql = $query;
     if (count($condition) > 0) {
         $sql .= " WHERE " . implode(' AND ', $condition) . ' ORDER BY prix DESC';
@@ -76,13 +77,14 @@
         <table class="centre" id="jolie">
             <tr id="titre"><td>Photo</td><td>Marque</td> <td>Modèle</td> <td>Prix</td> <td>Année</td> <td>Kilométrage</td> </tr>
         <?php
-
+// On vérifie que la variable $allcars contient bien une requête. Donc différent de zéro.
             if($allcars->rowCount() > 0) {
+// On boucle sur tout les véhicules présents dans la BDD.
                 while($car = $allcars->fetch()) {
                     ?>
-            
+<!-- Création d'un tableau pour y stocker tout les véhicules. -->
                 <tr>
-                    <td class="image"><img src="<?= $car['url_image'] ?>"></td>                    
+                    <td class="image"><a href=page1.php><img src="<?= $car['url_image'] ?>"/></a></td>                    
                     <td><?= $car['nom_voiture'] ?></td>
                     <td><?= $car['nom'] ?></td>
                     <td><?= $car['prix'] ?> €</td>
