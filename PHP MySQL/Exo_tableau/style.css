@@ -1,0 +1,9 @@
+table td {
+    border: 1px solid black;
+    text-align: center;
+    width: 150px;
+}
+
+.fred {
+    background-color: green;
+}
